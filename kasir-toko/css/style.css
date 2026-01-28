@@ -1,0 +1,105 @@
+/* === GLOBAL STYLE === */
+body { 
+    background-color: #f4f6f9; 
+    font-family: sans-serif;
+}
+
+/* === SIDEBAR (Menu Kiri) === */
+.sidebar { 
+    min-height: 100vh; 
+    background: #343a40; 
+    color: white; 
+}
+.sidebar a { 
+    color: #cfd8dc; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    display: block; 
+    transition: 0.3s;
+}
+.sidebar a:hover { 
+    background: #0d6efd; 
+    color: white; 
+}
+.sidebar a.active { 
+    background: #0d6efd; 
+    color: white; 
+    font-weight: bold;
+}
+
+/* === UTILITIES & CARD === */
+.card { 
+    border: none; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+.card-icon { 
+    font-size: 2.5rem; 
+    opacity: 0.3; 
+    position: absolute; 
+    right: 20px; 
+    top: 10px; 
+}
+
+/* === KHUSUS HALAMAN KASIR === */
+.product-card { 
+    cursor: pointer; 
+    transition: 0.2s; 
+    border: 1px solid #dee2e6;
+}
+.product-card:hover { 
+    transform: scale(1.02); 
+    border-color: #0d6efd; 
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+}
+.cart-area { 
+    height: calc(100vh - 180px); /* Agar keranjang pas di layar */
+    overflow-y: auto; 
+}
+/* ... (Kode CSS lama biarkan saja di atas) ... */
+
+/* === TAMBAHAN MODUL KASIR (LIST VIEW) === */
+
+/* Mencegah scroll pada body agar layout kasir terkunci pas di layar */
+body.kasir-mode {
+    overflow: hidden;
+}
+
+/* Area Scroll untuk Daftar Barang (Kiri) */
+.scroll-area {
+    height: 85vh;
+    overflow-y: auto;
+    padding-bottom: 50px; /* Ruang napas di bawah */
+}
+
+/* Gaya Item List Barang */
+.list-group-item-action {
+    cursor: pointer;
+    transition: 0.2s;
+    border-left: 5px solid transparent; /* Garis indikator kiri */
+}
+
+.list-group-item-action:hover {
+    background-color: #f8f9fa;
+    border-left: 5px solid #0d6efd; /* Biru saat di-hover */
+}
+
+/* Gaya Barang Habis */
+.stok-habis {
+    opacity: 0.6;
+    pointer-events: none; /* Tidak bisa diklik */
+    background: #eee;
+}
+
+/* Header Kategori (Pemisah Makanan, Minuman, dll) */
+.category-header {
+    font-weight: bold;
+    color: #495057;
+    background: #e9ecef;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
